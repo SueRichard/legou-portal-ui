@@ -181,7 +181,8 @@ export default {
     },
     //搜索
     searchBy() {
-      instance.post(`/search/query`, this.search, {
+      // 不经过网关，注意跨域
+      instance.post(`http://localhost:9006/search/query`, this.search, {
         headers: {
           'Content-Type': 'application/json;charset=UTF-8'
         }
